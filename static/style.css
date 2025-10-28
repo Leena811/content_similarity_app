@@ -1,0 +1,189 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Dark Mode Toggle */
+#darkModeToggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 15px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out;
+}
+
+#darkModeToggle:hover {
+    background: #0056b3;
+}
+
+/* Centered Container */
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
+}
+
+/* Heading */
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Textarea Styling */
+textarea {
+    width: 95%;
+    height: 120px;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: none;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+textarea:focus {
+    border: 1px solid #007bff;
+    background: #fff;
+    outline: none;
+}
+
+/* Button Styling */
+button, .btn {
+    padding: 12px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease-in-out;
+    margin-top: 10px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .btn:hover {
+    background: #0056b3;
+}
+
+/* Results Page */
+p {
+    font-size: 18px;
+    color: #555;
+    margin: 15px 0;
+}
+
+/* Named Entities Section */
+h3 {
+    color: #444;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #e9f5ff;
+    padding: 8px;
+    border-radius: 6px;
+    margin: 5px 0;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 20px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #007bff;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Named Entity Highlighting */
+.highlight {
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: white;
+}
+
+.highlight.PER { background-color: #ff5733; } /* Person */
+.highlight.ORG { background-color: #3498db; } /* Organization */
+.highlight.LOC { background-color: #27ae60; } /* Location */
+.highlight.GPE { background-color: #e74c3c; } /* Geopolitical Entity */
+.highlight.DATE { background-color: #f39c12; } /* Date */
+.highlight.MONEY { background-color: #9b59b6; } /* Money */
+.highlight.DEFAULT { background-color: #95a5a6; } /* Other Entities */
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode .container {
+    background: #1e1e1e;
+    color: white;
+    box-shadow: none;
+}
+
+.dark-mode textarea {
+    background: #2e2e2e;
+    color: white;
+    border: 1px solid #444;
+}
+
+.dark-mode button, .dark-mode .btn {
+    background: #2196f3;
+}
+
+.dark-mode .progress-bar {
+    background: #444;
+}
+
+.dark-mode .progress-fill {
+    background: #4caf50;
+}
+
+/* Dark Mode Named Entity Highlighting */
+.dark-mode .highlight.PER { background-color: #ff5733; } /* Person */
+.dark-mode .highlight.ORG { background-color: #2980b9; } /* Organization */
+.dark-mode .highlight.LOC { background-color: #2ecc71; } /* Location */
+.dark-mode .highlight.GPE { background-color: #c0392b; } /* Geopolitical Entity */
+.dark-mode .highlight.DATE { background-color: #f1c40f; } /* Date */
+.dark-mode .highlight.MONEY { background-color: #8e44ad; } /* Money */
+.dark-mode .highlight.DEFAULT { background-color: #7f8c8d; } /* Other Entities */

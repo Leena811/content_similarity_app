@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Similarity Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+    
+    <div class="container">
+        <h2>Content Similarity Analyzer</h2>
+        <form method="POST">
+            <textarea name="text1" placeholder="Enter first text..." required></textarea>
+            <textarea name="text2" placeholder="Enter second text..." required></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+
+    <!-- JavaScript for Dark Mode -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("darkModeToggle");
+            const body = document.body;
+
+            if (localStorage.getItem("darkMode") === "enabled") {
+                body.classList.add("dark-mode");
+            }
+
+            toggleButton.addEventListener("click", function () {
+                body.classList.toggle("dark-mode");
+                localStorage.setItem("darkMode", body.classList.contains("dark-mode") ? "enabled" : "disabled");
+            });
+        });
+    </script>
+</body>
+</html>

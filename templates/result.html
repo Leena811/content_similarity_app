@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <button id="darkModeToggle">🌙 Toggle Dark Mode</button>
+    
+    <div class="container">
+        <h2>Analysis Results</h2>
+        
+        <div class="progress-container">
+            <p><strong>Similarity Score:</strong> {{ similarity }}%</p>
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ similarity }}%;"></div>
+            </div>
+        </div>
+
+        <h3>Named Entities in Text 1</h3>
+        <ul>
+            {% for entity, label in entities1 %}
+                <li>{{ entity }} (<strong>{{ label }}</strong>)</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Named Entities in Text 2</h3>
+        <ul>
+            {% for entity, label in entities2 %}
+                <li>{{ entity }} (<strong>{{ label }}</strong>)</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Text 1 with Highlighted Entities</h3>
+        <p class="highlighted-text">{{ text1|safe }}</p>
+
+        <h3>Text 2 with Highlighted Entities</h3>
+        <p class="highlighted-text">{{ text2|safe }}</p>
+
+        <a href="/" class="btn">🔄 Analyze Another</a>
+        <a href="{{ url_for('download_pdf', similarity=similarity) }}" class="btn">
+            📄 Download Report
+        </a>
+    </div>
+
+    <!-- JavaScript for Dark Mode -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("darkModeToggle");
+            const body = document.body;
+
+            if (localStorage.getItem("darkMode") === "enabled") {
+                body.classList.add("dark-mode");
+            }
+
+            toggleButton.addEventListener("click", function () {
+                body.classList.toggle("dark-mode");
+                localStorage.setItem("darkMode", body.classList.contains("dark-mode") ? "enabled" : "disabled");
+            });
+        });
+    </script>
+</body>
+</html>
